@@ -2,15 +2,17 @@
 <html lang="en" dir="ltr" ng-app="BurgerApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
     <!-- Angularjs script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
     <!-- App.js sript -->
     <script src="app.js" charset="utf-8"></script>
+    <title>BurgerApp</title>
 
   </head>
   <!-- This sets the body as the controller and gives it an alias of ctrl -->
   <body ng-controller= "MainController as ctrl">
-      <h1>Test</h1>
+      <h1>{{ctrl.hello}}</h1>
+
+      <h2 ng-repeat="fruit in ctrl.fruits">{{fruit.name}}</h2>
   </body>
 </html>
