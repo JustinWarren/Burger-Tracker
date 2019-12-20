@@ -5,17 +5,7 @@ const app = angular.module('BurgerApp', []);
 //Cannot use an ES6 arrow function in Angularjs
 app.controller('MainController', function(){
   this.hello = 'oh hai!';
-  this.fruits = [
-          {
-            name: 'apple',
-          },
-          {
-            name: 'banana',
-          },
-          {
-            name: 'orange',
-          }
-  ];
+
 
 
 
