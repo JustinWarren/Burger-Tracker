@@ -2,6 +2,7 @@ const app = angular.module('BurgerApp', []);
 
 app.controller('MainController', ['$http',function($http) {
     const controller = this; //This is a controller variable
+    this.indexOfEditFormToShow = null;
 
 //This function will delete a burger
     this.deleteBurger = function(burger) {

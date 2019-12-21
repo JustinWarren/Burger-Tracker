@@ -22,12 +22,21 @@
     </form>
 
     <div class="burger-entry">
+
     <ul>
       <li ng-repeat="burger in ctrl.burgers">
         {{burger.name}} - {{burger.location}} - {{burger.notes}}
+
       <button ng-click="ctrl.deleteBurger(burger)">Delete Burger</button>
 
-      <form ng-submit="ctrl.editBurger(burger)">
+      <!-- This section helps you to have only one set of edit input boxes -->
+      <button href="#"
+      ng-if="$index !== ctrl.indexOfEditFormToShow"
+      ng-click="ctrl.indexOfEditFormToShow = $index; ctrl.updatedBurger = ''; ctrl.updatedLocation = ''; ctrl.updatedNotes = ''">
+      Edit this Burger
+    </button>
+
+      <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editBurger(burger)">
         <input type="text" ng-model="ctrl.updatedBurger" placeholder="Burger Name">
         <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location">
         <input type="text" ng-model="ctrl.updatedNotes" placeholder="Notes">
