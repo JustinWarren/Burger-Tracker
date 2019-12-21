@@ -3,6 +3,42 @@ const app = angular.module('BurgerApp', []);
 app.controller('MainController', ['$http',function($http) {
     const controller = this; //This is a controller variable
 
+//This function will delete a burger
+    this.deleteBurger = function(burger) {
+      $http({
+        method: 'DELETE',
+        url: '/burgers/' + burger._id
+      }).then(
+        function(response){
+           controller.getBurgers();
+        },
+        function(error) {
+
+        }
+      );
+    }
+
+//This function will edit the burger
+this.editBurger = function(burger) {
+  $http({
+    method: 'PUT',
+    url: '/burgers/' + burger._id,
+    data: {
+      name: this.updatedBurger,
+      location: this.updatedLocation,
+      notes: this.updatedNotes
+    }
+  }).then(
+    function(response){
+      controller.getBurgers();
+    },
+    function(error){
+
+    }
+  );
+}
+
+
 //This function creates a new burger and makes a post request to /burgers
     this.createBurger = function() {
       $http({
@@ -19,6 +55,7 @@ app.controller('MainController', ['$http',function($http) {
         console.log('error');
       })
   }
+
 
 //This function will make a get request to display all burgers
   this.getBurgers = function(){
