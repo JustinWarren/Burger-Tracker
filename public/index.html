@@ -1,13 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" ng-app="BurgerApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
+    <title>BurgerApp</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
 
   </head>
-  <body>
-    <h1>hi</h1>
+  <body ng-controller="MainController as ctrl">
+    <h1>My Burger App</h1>
+
+    <!-- Main Burger Input Form -->
+    <h2>Create a Burger</h2>
+    <!-- ng-submit will call the function in app.js -->
+    <form ng-submit="ctrl.createBurger()">
+      <input type="text" ng-model="ctrl.name" placeholder="Burger Name">
+      <input type="text" ng-model="ctrl.location" placeholder="Location">
+      <input type="text" ng-model="ctrl.notes" placeholder="Notes">
+      <input type="submit" name="" value="Log a Burger!">
+
+    </form>
+
+    <ul>
+      <li ng-repeat="name in ctrl.burgers">Burgers: {{name.name}}</li>
+    </ul>
+
   </body>
 </html>
