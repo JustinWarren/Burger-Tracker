@@ -22,8 +22,8 @@
       </form>
       <h3>Log In</h3>
       <form ng-submit="ctrl.login()">
-        <input type="text" name="" value="" placeholder="username">
-        <input type="password" name="" value="">
+        <input type="text" name="" value="" placeholder="username" ng-model="ctrl.loginUsername">
+        <input type="password" name="" value="" ng-model="ctrl.loginPassword">
         <input type="submit" name="" value="Log In">
       </form>
   </section>

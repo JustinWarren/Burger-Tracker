@@ -21,9 +21,21 @@ app.controller('MainController', ['$http',function($http) {
 
     //This function will run when user clicks on login button
     this.login = function() {
-      this.loggedInUser = {
-        username: 'blah'
-      }
+      $http({
+        url: '/sessions',
+        method: 'POST',
+        data: {
+          username: this.loginUsername,
+          password: this.loginPassword
+        }
+      }).then(function(response){
+        if(response.data.username){
+          controller.loggedInUser = response.data;
+        } else {
+          controller.loginUsername = null;
+          controller.loginPassword = null;
+        }
+      })
     }
 
 
