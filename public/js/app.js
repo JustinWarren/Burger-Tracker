@@ -4,6 +4,7 @@ app.controller('MainController', ['$http',function($http) {
     const controller = this; //This is a controller variable
     this.indexOfEditFormToShow = null;
 
+    this.loggedInUser = false;
 //This function will delete a burger
     this.deleteBurger = function(burger) {
       $http({

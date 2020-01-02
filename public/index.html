@@ -11,8 +11,17 @@
   <header>
     <h1>My Burger App</h1>
   </header>
+
+  <!-- This will display if user in not logged in  -->
+  <section>
+
+  </section>
+
+
+  <!-- This will display if user is logged in -->
+  <section>
     <!-- Main Burger Input Form -->
-      <h2>Create a Burger</h2>
+    <h2>Create a Burger</h2>
     <!-- ng-submit will call the function in app.js -->
     <form ng-submit="ctrl.createBurger()">
       <input type="text" ng-model="ctrl.name" placeholder="Burger Name">
@@ -23,28 +32,30 @@
 
     <div class="burger-entry">
 
-    <ul>
-      <li ng-repeat="burger in ctrl.burgers">
-        {{burger.name}} - {{burger.location}} - {{burger.notes}}
+      <ul>
+        <li ng-repeat="burger in ctrl.burgers">
+          {{burger.name}} - {{burger.location}} - {{burger.notes}}
 
-      <button ng-click="ctrl.deleteBurger(burger)">Delete Burger</button>
+          <button ng-click="ctrl.deleteBurger(burger)">Delete Burger</button>
 
-      <!-- This section helps you to have only one set of edit input boxes -->
-      <button href="#"
-      ng-if="$index !== ctrl.indexOfEditFormToShow"
-      ng-click="ctrl.indexOfEditFormToShow = $index; ctrl.updatedBurger = ''; ctrl.updatedLocation = ''; ctrl.updatedNotes = ''">
-      Edit this Burger
-    </button>
+          <!-- This section helps you to have only one set of edit input boxes -->
+          <button href="#"
+          ng-if="$index !== ctrl.indexOfEditFormToShow"
+          ng-click="ctrl.indexOfEditFormToShow = $index; ctrl.updatedBurger = ''; ctrl.updatedLocation = ''; ctrl.updatedNotes = ''">
+          Edit this Burger
+        </button>
 
-      <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editBurger(burger)">
-        <input type="text" ng-model="ctrl.updatedBurger" placeholder="Burger Name">
-        <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location">
-        <input type="text" ng-model="ctrl.updatedNotes" placeholder="Notes">
-        <input type="submit" value="Update Burger">
-      </form>
+        <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editBurger(burger)">
+          <input type="text" ng-model="ctrl.updatedBurger" placeholder="Burger Name">
+          <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location">
+          <input type="text" ng-model="ctrl.updatedNotes" placeholder="Notes">
+          <input type="submit" value="Update Burger">
+        </form>
       </li>
     </ul>
   </div >
+
+  </section>
 
   </body>
 </html>
