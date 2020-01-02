@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/JustinWarren/Burger-Tracker#readme",
   "dependencies": {
+    "bcrypt": "^3.0.7",
     "express": "^4.17.1",
     "mongoose": "^5.8.1"
   }

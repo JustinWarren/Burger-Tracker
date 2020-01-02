@@ -10,6 +10,10 @@ app.use(express.static('public'));
 const burgersController = require('./controllers/burgers.js');
 app.use('/burgers', burgersController);
 
+const usersController = require('./controllers/users.js');
+app.use('/users', usersController);
+
+
 mongoose.connect('mongodb://localhost:27017/meanburger', { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.once('open', () => {
     console.log('connected to mongoose...');

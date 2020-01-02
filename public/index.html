@@ -13,13 +13,25 @@
   </header>
 
   <!-- This will display if user in not logged in  -->
-  <section>
-
+  <section ng-if="ctrl.loggedInUser === false">
+      <h3>Sign Up</h3>
+      <form ng-submit="ctrl.signup()">
+        <input type="text" name="" value="" placeholder="username">
+        <input type="password" name="" value="">
+        <input type="submit" name="" value="Sign Up">
+      </form>
+      <h3>Log In</h3>
+      <form ng-submit="ctrl.login()">
+        <input type="text" name="" value="" placeholder="username">
+        <input type="password" name="" value="">
+        <input type="submit" name="" value="Log In">
+      </form>
   </section>
 
 
   <!-- This will display if user is logged in -->
-  <section>
+  <section ng-if="ctrl.loggedInUser !== false">
+    <h2>Welcome {{ctrl.loggedInUser.username}}</h2>
     <!-- Main Burger Input Form -->
     <h2>Create a Burger</h2>
     <!-- ng-submit will call the function in app.js -->

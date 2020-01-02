@@ -3,8 +3,24 @@ const app = angular.module('BurgerApp', []);
 app.controller('MainController', ['$http',function($http) {
     const controller = this; //This is a controller variable
     this.indexOfEditFormToShow = null;
-
     this.loggedInUser = false;
+
+    //This function will run when user clicks on login button
+    this.login = function() {
+      this.loggedInUser = {
+        username: 'blah'
+      }
+    }
+
+
+    //This function will run when user clicks on submit button
+    this.signup = function(){
+      this.loggedInUser = {
+        username: "blahhhhhh blahh"
+      }
+    }
+
+
 //This function will delete a burger
     this.deleteBurger = function(burger) {
       $http({
