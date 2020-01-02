@@ -16,8 +16,8 @@
   <section ng-if="ctrl.loggedInUser === false">
       <h3>Sign Up</h3>
       <form ng-submit="ctrl.signup()">
-        <input type="text" name="" value="" placeholder="username">
-        <input type="password" name="" value="">
+        <input type="text" name="" value="" placeholder="username" ng-model="ctrl.signupUsername">
+        <input type="password" name="" value="" ng-model="ctrl.signupPassword">
         <input type="submit" name="" value="Sign Up">
       </form>
       <h3>Log In</h3>

@@ -5,6 +5,20 @@ app.controller('MainController', ['$http',function($http) {
     this.indexOfEditFormToShow = null;
     this.loggedInUser = false;
 
+    //This function will run when user clicks on submit button
+    this.signup = function(){
+      $http({
+        url:'/users',
+        method: 'POST',
+        data: {
+          username: this.signupUsername,
+          password: this.signupPassword
+        }
+      }).then(function(response){
+        controller.loggedInUser = response.data;
+      })
+    }
+
     //This function will run when user clicks on login button
     this.login = function() {
       this.loggedInUser = {
@@ -12,13 +26,6 @@ app.controller('MainController', ['$http',function($http) {
       }
     }
 
-
-    //This function will run when user clicks on submit button
-    this.signup = function(){
-      this.loggedInUser = {
-        username: "blahhhhhh blahh"
-      }
-    }
 
 
 //This function will delete a burger

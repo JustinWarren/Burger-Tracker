@@ -13,6 +13,8 @@ app.use('/burgers', burgersController);
 const usersController = require('./controllers/users.js');
 app.use('/users', usersController);
 
+const sessionController = require('./controllers/sessions.js');
+app.use('/sessions', sessionController);
 
 mongoose.connect('mongodb://localhost:27017/meanburger', { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.once('open', () => {
