@@ -6,6 +6,11 @@ const app = express();
 
 app.use(express.json());
 app.use(express.static('public'));
+app.use(session({
+  secret:'feedmeseymour',
+  resave:false,
+  saveUnitialized: false
+}))
 
 
 const burgersController = require('./controllers/burgers.js');

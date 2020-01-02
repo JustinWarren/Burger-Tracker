@@ -12,7 +12,8 @@ router.post('/', (req, res) => {
     } else {
       const doesPasswordMatch = bcrypt.compareSync(req.body.password, foundUser.password);
       if(doesPasswordMatch){
-        res.json(foundUser)
+        req.session.user = foundUser;
+        res.json(foundUser);
       } else {
         res.json({
           message: 'user not found'
@@ -21,6 +22,11 @@ router.post('/', (req, res) => {
     }
    });
 });
+
+
+router.get('/', (req, res) => {
+  res.json(req.session.user);
+})
 
 
 module.exports = router;

@@ -108,6 +108,11 @@ this.editBurger = function(burger) {
 
   this.getBurgers(); //This will call function when controller is instantiated in body
 
-
+  $http({
+    method: 'GET',
+    url:'/sessions'
+  }).then(function(response){
+    controller.loggedInUser = response.data;
+  });
 
 }]);
