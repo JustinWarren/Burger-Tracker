@@ -39,6 +39,14 @@ app.controller('MainController', ['$http',function($http) {
     }
 
 
+this.logout = function() {
+  $http({
+    url:'/sessions',
+    method: 'DELETE'
+  }).then(function(){
+    controller.loggedInUser = false;
+  })
+}
 
 //This function will delete a burger
     this.deleteBurger = function(burger) {
@@ -112,7 +120,9 @@ this.editBurger = function(burger) {
     method: 'GET',
     url:'/sessions'
   }).then(function(response){
-    controller.loggedInUser = response.data;
+    if(response.data.username) {
+      controller.loggedInUser = response.data;
+    }
   });
 
 }]);
