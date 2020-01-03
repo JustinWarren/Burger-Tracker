@@ -1,6 +1,9 @@
 {
   "name": "burger-tracker",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.11.0"
+  },
   "description": "Final Project",
   "main": "server.js",
   "scripts": {
@@ -18,8 +21,9 @@
   "homepage": "https://github.com/JustinWarren/Burger-Tracker#readme",
   "dependencies": {
     "bcrypt": "^3.0.7",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
-    "mongoose": "^5.8.1"
+    "mongoose": "^5.8.4"
   }
 }
