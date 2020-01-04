@@ -1,3 +1,7 @@
+header {
+  height: 3.5em;
+}
+
 .burger-entry {
   border: 2px solid firebrick;
   padding: 4px;
@@ -8,9 +12,4 @@ ul li{
   border: 2px solid yellow;
   padding: 4px;
   margin: 5px;
-}
-
-h1 {
-  text-align: center;
-
 }
