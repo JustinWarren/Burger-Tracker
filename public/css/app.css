@@ -1,5 +1,16 @@
 header {
-  height: 3.5em;
+  height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-div {
+  width: 40%;
+  border: 2px solid #FEDD57;
+  padding: 2em;
+  margin: 2em auto;
+  border-radius: 3px;
 }
 
 .burger-entry {
