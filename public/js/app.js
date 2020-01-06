@@ -5,6 +5,12 @@ app.controller('MainController', ['$http',function($http) {
     this.indexOfEditFormToShow = null;
     this.loggedInUser = false;
 
+    this.clearburgers = function(){
+      this.name = " ";
+      this.location = " ";
+      this.notes = "";
+    }
+
     //This function will run when user clicks on submit button
     this.signup = function(){
       $http({
@@ -99,6 +105,7 @@ this.editBurger = function(burger) {
       }, function(){
         console.log('error');
       })
+      this.clearburgers();
   }
 
 

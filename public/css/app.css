@@ -1,3 +1,11 @@
+h1,h2,h3,p {
+  font-family:'Caveat Brush', cursive;
+}
+
+body, button, input {
+  font-family: Montserrat, sans-serif;
+}
+
 header {
   height: 4em;
   display: flex;
@@ -13,14 +21,6 @@ header {
   border-radius: 3px;
 }
 
-.burger-entry {
-  border: 2px solid firebrick;
-  padding: 4px;
-  margin: 4px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 
 ul li{
   border: 2px solid yellow;
@@ -40,4 +40,29 @@ ul li{
   margin: 2em auto;
   border-radius: 3px;
   box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+}
+
+.burger-entry {
+  border: 2px solid #000;
+  padding: 4px;
+  margin: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.burger-card {
+  border: 2px solid #FEDD57;
+  padding: 2em;
+  margin: 2em auto;
+  border-radius: 3px;
+  box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+}
+
+.burger-title {
+  text-decoration: underline;
+}
+
+.burger-info {
+  margin: 15px 0;
 }

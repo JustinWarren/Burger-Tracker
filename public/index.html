@@ -7,6 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Montserrat:500" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css">
   </head>
   <body ng-controller="MainController as ctrl">
@@ -66,9 +67,9 @@
 
   <!-- This will display if user is logged in -->
   <section ng-if="ctrl.loggedInUser !== false">
-    <h2 class="is-size-4 greeting">Welcome {{ctrl.loggedInUser.username}}!</h2>
+    <h2 class="is-size-3 greeting">Welcome {{ctrl.loggedInUser.username}}!</h2>
     <!-- Main Burger Input Form -->
-    <h2 class="is-size-5 has-text-centered">Create a Burger</h2>
+    <h2 class="is-size-3 has-text-centered">Create a Burger</h2>
 
     <div class="create-burger">
       <!-- ng-submit will call the function in app.js -->
@@ -103,38 +104,33 @@
 
     <!-- This is where the burger entries part goes -->
     <div class="burger-entry">
+      <div class="burger-card" ng-repeat="burger in ctrl.burgers">
+        <p class="burger-title has-text-centered is-size-3">Burger Log</p>
+        <h1 class="burger-info is-size-5">Burger Name:  {{burger.name}} </h1>
+        <h1 class="burger-info is-size-5">Location: {{burger.location}}</h1>
+        <h1 class="burger-info is-size-5">Notes: {{burger.notes}}</h1>
 
+          <button class="button has-text-centered is-small has-background-warning has-text-black" ng-click="ctrl.deleteBurger(burger)">Delete Burger</button>
 
-        <ul>
-          <li ng-repeat="burger in ctrl.burgers">
-            <p class="has-text-centered">Burger Log</p>
-            <h1 class="is-size-5">Burger Name:{{burger.name}} </h1>
-            <h1 class="is-size-5">Location: {{burger.location}}</h1>
-            <h1 class="is-size-5">Notes: {{burger.notes}}</h1>
-
-            <button class="button is-small"ng-click="ctrl.deleteBurger(burger)">Delete Burger</button>
-
-            <!-- This section helps you to have only one set of edit input boxes -->
-            <button class="button is-small" href="#"
-            ng-if="$index !== ctrl.indexOfEditFormToShow"
-            ng-click="ctrl.indexOfEditFormToShow = $index; ctrl.updatedBurger = ''; ctrl.updatedLocation = ''; ctrl.updatedNotes = ''">
-            Edit this Burger
-          </button>
-
-          <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editBurger(burger)">
-            <input type="text" ng-model="ctrl.updatedBurger" placeholder="Burger Name">
-            <input type="text" ng-model="ctrl.updatedLocation" placeholder="Location">
-            <input type="text" ng-model="ctrl.updatedNotes" placeholder="Notes">
-            <input type="submit" value="Update Burger">
-          </form>
-        </li>
-      </ul>
-    </div >
+          <!-- This section helps you to have only one set of edit input boxes -->
+          <button class="button has-text-centered is-small has-background-warning has-text-black" href="#"
+          ng-if="$index !== ctrl.indexOfEditFormToShow"
+          ng-click="ctrl.indexOfEditFormToShow = $index; ctrl.updatedBurger = ''; ctrl.updatedLocation = ''; ctrl.updatedNotes = ''">
+          Edit this Burger
+        </button>
+      <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editBurger(burger)">
+        <input class="input" type="text" ng-model="ctrl.updatedBurger" placeholder="Burger Name">
+        <input class="input" type="text" ng-model="ctrl.updatedLocation" placeholder="Location">
+        <input class="input" type="text" ng-model="ctrl.updatedNotes" placeholder="Notes">
+        <input class="button is-small is-normal has-background-warning has-text-black" type="submit" value="Update Burger">
+      </form>
+    </div>
+  </div >
 
   <button ng-click="ctrl.logout()">Log Out</button>
-  </section>
+</section>
 
-  </body>
+</body>
 </html>
 
 <!-- <div class="columns burger-entry">
