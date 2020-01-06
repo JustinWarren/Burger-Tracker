@@ -102,21 +102,20 @@
 
 
     <!-- This is where the burger entries part goes -->
-    <div class="columns burger-entry">
+    <div class="burger-entry">
 
-      <div class="column">
+
         <ul>
           <li ng-repeat="burger in ctrl.burgers">
-            <p>Burger Log</p>
-            <h1 class="is-size-4">Burger Name:</h1>
-            <p>{{burger.name}}</p>
-            <p>Location: {{burger.location}}</p>
-            <p>Notes: {{burger.notes}}</p>
+            <p class="has-text-centered">Burger Log</p>
+            <h1 class="is-size-5">Burger Name:{{burger.name}} </h1>
+            <h1 class="is-size-5">Location: {{burger.location}}</h1>
+            <h1 class="is-size-5">Notes: {{burger.notes}}</h1>
 
-            <button ng-click="ctrl.deleteBurger(burger)">Delete Burger</button>
+            <button class="button is-small"ng-click="ctrl.deleteBurger(burger)">Delete Burger</button>
 
             <!-- This section helps you to have only one set of edit input boxes -->
-            <button href="#"
+            <button class="button is-small" href="#"
             ng-if="$index !== ctrl.indexOfEditFormToShow"
             ng-click="ctrl.indexOfEditFormToShow = $index; ctrl.updatedBurger = ''; ctrl.updatedLocation = ''; ctrl.updatedNotes = ''">
             Edit this Burger
@@ -130,9 +129,7 @@
           </form>
         </li>
       </ul>
-      </div>
-
-  </div >
+    </div >
 
   <button ng-click="ctrl.logout()">Log Out</button>
   </section>

@@ -17,6 +17,9 @@ header {
   border: 2px solid firebrick;
   padding: 4px;
   margin: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 ul li{
@@ -31,9 +34,10 @@ ul li{
 }
 
 .create-burger {
-  border: 2px solid blue;
+  border: 2px solid #FEDD57;
   width: 40%;
   padding: 2em;
   margin: 2em auto;
   border-radius: 3px;
+  box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
 }
