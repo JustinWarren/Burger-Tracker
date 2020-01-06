@@ -24,3 +24,16 @@ ul li{
   padding: 4px;
   margin: 5px;
 }
+
+/* LOGGED IN STYLES */
+.greeting {
+  padding: 1em;
+}
+
+.create-burger {
+  border: 2px solid blue;
+  width: 40%;
+  padding: 2em;
+  margin: 2em auto;
+  border-radius: 3px;
+}
