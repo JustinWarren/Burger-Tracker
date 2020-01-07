@@ -7,11 +7,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <!-- <script src="https://use.fontawesome.com/026f964dc7.js"></script> -->
     <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Montserrat:500" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css">
   </head>
   <body ng-controller="MainController as ctrl">
   <header class="has-background-black flex">
+    <!-- <i class="fas fa-hamburger fa-2x" style="color: yellow"></i> -->
     <h1 class="has-text-warning is-size-3">My Burger App</h1>
   </header>
 
@@ -110,24 +112,33 @@
         <h1 class="burger-info is-size-5">Location: {{burger.location}}</h1>
         <h1 class="burger-info is-size-5">Notes: {{burger.notes}}</h1>
 
-          <button class="button has-text-centered is-small has-background-warning has-text-black" ng-click="ctrl.deleteBurger(burger)">Delete Burger</button>
+          <button class="button has-text-centered is-normal has-background-warning has-text-black" ng-click="ctrl.deleteBurger(burger)">Delete Burger</button>
 
           <!-- This section helps you to have only one set of edit input boxes -->
-          <button class="button has-text-centered is-small has-background-warning has-text-black" href="#"
+          <button class="button has-text-centered is-normal has-background-warning has-text-black" href="#"
           ng-if="$index !== ctrl.indexOfEditFormToShow"
           ng-click="ctrl.indexOfEditFormToShow = $index; ctrl.updatedBurger = ''; ctrl.updatedLocation = ''; ctrl.updatedNotes = ''">
           Edit this Burger
         </button>
+
       <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editBurger(burger)">
-        <input class="input" type="text" ng-model="ctrl.updatedBurger" placeholder="Burger Name">
-        <input class="input" type="text" ng-model="ctrl.updatedLocation" placeholder="Location">
-        <input class="input" type="text" ng-model="ctrl.updatedNotes" placeholder="Notes">
+        <input class="input edit-inputfield" type="text" ng-model="ctrl.updatedBurger" placeholder="Burger Name">
+        <input class="input edit-inputfield" type="text" ng-model="ctrl.updatedLocation" placeholder="Location">
+        <input class="input edit-inputfield" type="text" ng-model="ctrl.updatedNotes" placeholder="Notes">
         <input class="button is-small is-normal has-background-warning has-text-black" type="submit" value="Update Burger">
       </form>
     </div>
   </div >
 
-  <button ng-click="ctrl.logout()">Log Out</button>
+
+  <footer class="footer">
+    <div class="content">
+      <div class="footer-button">
+        <button class="button is-normal has-background-warning has-text-black" ng-click="ctrl.logout()">Get me outta here!</button>
+      </div>
+      <p class="is-size-5 has-text-centered">Burger App was created by <a href="https://github.com/JustinWarren/Burger-Tracker">Justin Warren</a> as part of the General Assembly Software Engineering Immersive!</p>
+    </div>
+    </footer>
 </section>
 
 </body>
