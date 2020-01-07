@@ -5,13 +5,28 @@ app.controller('MainController', ['$http',function($http) {
     this.indexOfEditFormToShow = null;
     this.loggedInUser = false;
 
+    //This will clear the burger input form on submit
     this.clearburgers = function(){
       this.name = " ";
       this.location = " ";
       this.notes = "";
     }
 
-    //This function will run when user clicks on submit button
+    //This will clear the signup form fields after submit is clicked by assigning
+    //empty strings to signupUsername and signupPassword
+    this.clearsignup = function(){
+      this.signupUsername = "";
+      this.signupPassword = "";
+    }
+
+    //This will clear the login form fields after submit is clicked by assigning
+    //empty strings to loginUsername and loginPassword
+    this.clearlogin = function(){
+      this.loginUsername = "";
+      this.loginPassword = "";
+    }
+
+    //This function will run when user clicks on signup  button
     this.signup = function(){
       $http({
         url:'/users',
@@ -23,6 +38,7 @@ app.controller('MainController', ['$http',function($http) {
       }).then(function(response){
         controller.loggedInUser = response.data;
       })
+      this.clearsignup();
     }
 
     //This function will run when user clicks on login button
@@ -42,6 +58,7 @@ app.controller('MainController', ['$http',function($http) {
           controller.loginPassword = null;
         }
       })
+      this.clearlogin();
     }
 
 
