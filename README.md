@@ -20,3 +20,6 @@ The hamburger logos were created using [LogoMakr](https://logomakr.com/).  It is
 
 ## Font Pairings
 Google Fonts were used for this application.  The two styles used were: Caveat Brush(Headers) and Montserrat (inputs, buttons).
+
+## Future Improvements
+It would be great to add more visually appealing elements to the app (pictures, video).  In addition to this, adding a Google Map or utilizing another 3rd party API would be an added touch!
