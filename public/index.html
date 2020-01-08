@@ -7,21 +7,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <!-- <script src="https://use.fontawesome.com/026f964dc7.js"></script> -->
     <link href="https://fonts.googleapis.com/css?family=Caveat+Brush|Montserrat:500" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css">
   </head>
   <body ng-controller="MainController as ctrl">
   <header class="has-background-black flex">
-    <!-- <i class="fas fa-hamburger fa-2x" style="color: yellow"></i> -->
-    <h1 class="has-text-warning is-size-3">My Burger App</h1>
+    <img class="logo" src="https://i.imgur.com/CUEsJAv.png" alt="Picture of cartoon hamburger">
+    <h1 class="has-text-warning is-size-2">My Burger App</h1>
+    <img class="logo" src="https://i.imgur.com/CUEsJAv.png" alt="Picture of cartoon hamburger">
   </header>
 
   <!-- This will display if user in not logged in  -->
   <section ng-if="ctrl.loggedInUser === false">
 
     <div class="signup-div">
-      <h3 class="is-size-4">Sign Up</h3>
+      <h3 class="is-size-3">Sign Up</h3>
 
       <form ng-submit="ctrl.signup()">
         <div class="field">
@@ -44,7 +44,7 @@
     </div>
 
     <div class="signup-div">
-      <h3 class="is-size-4">Log In</h3>
+      <h3 class="is-size-3">Log In</h3>
       <form ng-submit="ctrl.login()">
         <div class="field">
           <label class="label">Username</label>
@@ -139,7 +139,8 @@
       <div class="footer-button">
         <button class="button is-normal has-background-warning has-text-black" ng-click="ctrl.logout()">Get me outta here!</button>
       </div>
-      <p class="is-size-5 has-text-centered">Burger App was created by <a href="https://github.com/JustinWarren/Burger-Tracker">Justin Warren</a> as part of the General Assembly Software Engineering Immersive!</p>
+      <p class="is-size-5 has-text-centered">Burger App was created by <a href="https://github.com/JustinWarren/Burger-Tracker">Justin Warren</a>.</p>
+      <p class="is-size-5 has-text-centered">Created my free logo at <a href="https://logomakr.com/">LogoMakr.com</a></p>
     </div>
     </footer>
 </section>

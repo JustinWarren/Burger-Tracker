@@ -6,9 +6,8 @@ body, button, input {
   font-family: Montserrat, sans-serif;
 }
 
-
 header {
-  height: 4em;
+  height: 4.5em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,6 +28,12 @@ ul li{
   margin: 5px;
 }
 
+.logo {
+  height: 45px;
+  margin: 0 10px;
+}
+
+
 /* LOGGED IN STYLES */
 .greeting {
   padding: 1em;
@@ -44,9 +49,8 @@ ul li{
 }
 
 .burger-entry {
-  border: 2px solid #000;
   padding: 4px;
-  margin: 4px;
+  margin: 2.5em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -75,4 +79,5 @@ ul li{
 .footer-button {
   text-align: center;
   margin-bottom: 1.25em;
+  padding: 3rem 1.5rem 3rem;
 }
