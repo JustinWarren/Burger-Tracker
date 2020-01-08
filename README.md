@@ -15,8 +15,8 @@ As part of the project we were tasked with learning a new technology.  Given tha
 * User can update a previous burger entry (Update)
 * User can delete a burger (Delete)
 
-##Logo Creation
+## Logo Creation
 The hamburger logos were created using [LogoMakr](https://logomakr.com/).  It is a great site!
 
-##Font Pairings
+## Font Pairings
 Google Fonts were used for this application.  The two styles used were: Caveat Brush(Headers) and Montserrat (inputs, buttons).
