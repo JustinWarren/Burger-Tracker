@@ -117,14 +117,17 @@
           <!-- This section helps you to have only one set of edit input boxes -->
           <button class="button has-text-centered is-normal has-background-warning has-text-black" href="#"
           ng-if="$index !== ctrl.indexOfEditFormToShow"
-          ng-click="ctrl.indexOfEditFormToShow = $index; ctrl.updatedBurger = ''; ctrl.updatedLocation = ''; ctrl.updatedNotes = ''">
+          ng-click="ctrl.indexOfEditFormToShow = $index; ctrl.updatedBurger = burger.name; ctrl.updatedLocation = burger.location; ctrl.updatedNotes = burger.notes">
           Edit this Burger
         </button>
 
       <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editBurger(burger)">
         <input class="input edit-inputfield" type="text" ng-model="ctrl.updatedBurger" placeholder="Burger Name">
+
         <input class="input edit-inputfield" type="text" ng-model="ctrl.updatedLocation" placeholder="Location">
+
         <input class="input edit-inputfield" type="text" ng-model="ctrl.updatedNotes" placeholder="Notes">
+
         <input class="button is-small is-normal has-background-warning has-text-black" type="submit" value="Update Burger">
       </form>
     </div>

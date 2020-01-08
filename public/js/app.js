@@ -101,9 +101,9 @@ this.editBurger = function(burger) {
       controller.getBurgers();
     },
     function(error){
-
     }
   );
+  this.indexOfEditFormToShow = null;
 }
 
 
